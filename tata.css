@@ -1,0 +1,133 @@
+/* style.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f3f8fd;
+}
+
+.navbar {
+  background-color: #1e3a8a;
+  color: white;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.container {
+  max-width: 800px;
+  margin: 100px auto 0 auto; /* Leave space for navbar */
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+
+h1 {
+  color: #bbbb97;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+
+.match {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.match:hover {
+  transform: translateY(-3px);
+}
+
+.team {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+}
+
+.score {
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+  color: #0284c7;
+}
+
+.status {
+  font-size: 0.95rem;
+  color: #475569;
+}
+/* Navigation Bar */
+
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: #ffcc00;
+}
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px;
+  }
+
+  .navbar h1 {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  .navbar nav {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .container {
+    margin-top: 120px;
+    padding: 12px;
+  }
+
+  h1 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  #scores {
+    font-size: 14px;
+    text-align: center;
+  }
+}

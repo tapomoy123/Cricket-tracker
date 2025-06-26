@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cricket Teams | API Version</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      margin: 0;
+    }
+    header {
+      background: #1a237e;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+    h1 {
+      margin: 0;
+    }
+    .team-section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+    .team-title {
+      text-align: center;
+      margin-bottom: 1rem;
+      padding: 0.5rem;
+      border-radius: 10px;
+      color: white;
+    }
+    .team-india { background: #138808; }
+    .team-australia { background: #ffc107; }
+    .team-pakistan { background: #0c7c59; }
+    .team-england { background: #00247d; }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .card h3 {
+      color: #0d47a1;
+      margin: 0.5rem 0;
+    }
+    .card p {
+      margin: 0;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🏏 Cricket Team Squads</h1>
+  </header>
+
+  <div class="team-section">
+    <div class="team-title team-india">Team India Squad</div>
+    <div class="team-grid" id="india-team"></div>
+
+    <div class="team-title team-australia">Team Australia Squad</div>
+    <div class="team-grid" id="australia-team"></div>
+
+    <div class="team-title team-pakistan">Team Pakistan Squad</div>
+    <div class="team-grid" id="pakistan-team"></div>
+
+    <div class="team-title team-england">Team England Squad</div>
+    <div class="team-grid" id="england-team"></div>
+  </div>
+
+  <script>
+    const teams = {
+      "india": [
+        { name: "Rohit Sharma", role: "Captain (Opener)" },
+        { name: "Virat Kohli", role: "Batsman" },
+        { name: "Jasprit Bumrah", role: "Fast Bowler" },
+        { name: "KL Rahul", role: "Wicketkeeper Batsman" }
+      ],
+      
+      "australia": [
+        { name: "Pat Cummins", role: "Captain (Fast Bowler)" },
+        { name: "Steve Smith", role: "Batsman" },
+        { name: "David Warner", role: "Opener" },
+        { name: "Mitchell Starc", role: "Fast Bowler" }
+      ],
+      "pakistan": [
+        { name: "Babar Azam", role: "Captain (Batsman)" },
+        { name: "Shaheen Afridi", role: "Fast Bowler" },
+        { name: "Mohammad Rizwan", role: "Wicketkeeper" },
+        { name: "Shadab Khan", role: "All-Rounder" }
+      ],
+      "england": [
+        { name: "Joe Root", role: "Batsman" },
+        { name: "Ben Stokes", role: "All-Rounder" },
+        { name: "Jos Buttler", role: "Wicketkeeper Batsman" },
+        { name: "Mark Wood", role: "Fast Bowler" }
+      ]
+    };
+
+    function renderTeam(teamId, players) {
+      const container = document.getElementById(teamId);
+      players.forEach(player => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `<h3>${player.name}</h3><p>${player.role}</p>`;
+        container.appendChild(card);
+      });
+    }
+
+    renderTeam("india-team", teams.india);
+    renderTeam("australia-team", teams.australia);
+    renderTeam("pakistan-team", teams.pakistan);
+    renderTeam("england-team", teams.england);
+  </script>
+</body>
+</html>
